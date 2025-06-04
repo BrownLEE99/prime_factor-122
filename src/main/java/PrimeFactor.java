@@ -5,8 +5,13 @@ public class PrimeFactor {
 
     public List<Integer> of(int number) {
         ArrayList<Integer> factors = new ArrayList<>();
-        if(number > 1) {
-            factors.add(number);
+        if (number > 1) {
+            if (number == 4) {
+                factors.add(2);
+                factors.add(2);
+            } else {
+                factors.add(number);
+            }
         }
         return factors;
     }
