@@ -6,15 +6,19 @@ public class PrimeFactor {
     public List<Integer> of(int number) {
         ArrayList<Integer> factors = new ArrayList<>();
         if (number > 1) {
+            int divisor = 2;
             if (number == 4) {
-                while (number % 2 == 0) {
-                    factors.add(2);
-                    number /= 2;
+                while (number % divisor == 0) {
+                    factors.add(divisor);
+                    number /= divisor;
                 }
             } else if (number == 6) {
-                factors.add(2);
-                factors.add(3);
-
+                for(divisor = 2; number > 1; divisor++) {
+                    while(number % divisor == 0) {
+                        factors.add(divisor);
+                        number /= divisor;
+                    }
+                }
             } else {
                 factors.add(number);
             }
