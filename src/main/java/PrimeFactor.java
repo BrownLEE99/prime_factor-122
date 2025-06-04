@@ -13,12 +13,15 @@ public class PrimeFactor {
                     number /= divisor;
                 }
             } else if (number == 6) {
-                for(divisor = 2; number > 1; divisor++) {
-                    while(number % divisor == 0) {
+                for (divisor = 2; number > 1; divisor++) {
+                    while (number % divisor == 0) {
                         factors.add(divisor);
                         number /= divisor;
                     }
                 }
+            } else if (number == 9) {
+                factors.add(3);
+                factors.add(3);
             } else {
                 factors.add(number);
             }
